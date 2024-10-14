@@ -1,0 +1,112 @@
+<div >
+    <h4 style="margin-bottom: 2rem;">Summary Breakdown For Entered Ingredients</h4>
+    @if(ingredientsList.length > 0){
+    <table class="table" style="margin-bottom: 2rem;">
+        <thead>
+            <tr>
+                <th>Food</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+                <th>Calories (kcal)</th>
+                <th>Weight (g)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(ingredient of ingredientsList; track ingredient.food){
+            <tr>
+                <td>{{ ingredient.food }}</td>
+                <td>{{ ingredient.quantity }}</td>
+                <td>{{ ingredient.unit }}</td>
+                <td>{{ ingredient.calories | approximation}}</td>
+                <td>{{ ingredient.weight | approximation}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    }
+
+
+    <!-- Total Nutrition Button -->
+    <button mat-raised-button color="accent" class="mt-3" (click)="showTotalNutrition()">
+        Show Total Nutrition
+    </button>
+    @if(showTotals){
+        <div class="nutrition-facts-card mt-3">
+            <h2 class="title">Nutrition Facts</h2>
+            <div class="line"></div>
+        
+            <p><strong>Amount Per Serving</strong></p>
+        
+            <div class="calories">
+                <span class="calories-label">Calories</span>
+                <span class="calories-value">{{ totalNutrition.calories | approximation:0 }}</span>
+            </div>
+        
+            <div class="line"></div>
+            <p style="margin-bottom: 0;text-align: end;">% Daily Value*</p>
+            <div class="line"></div>
+        
+            <!-- Total Fat -->
+            <div class="nutrient">
+                <span><strong>Total Fat</strong> {{ totalNutrition.fat | approximation:1 }} g</span>
+                <span class="percent">{{ totalNutrition.fat | dailyValue:'fat' }}</span> 
+            </div>
+        
+            <!-- Cholesterol -->
+            <div class="nutrient">
+                <span><strong>Cholesterol</strong> {{ totalNutrition.cholesterol | approximation:1 }} mg</span>
+                <span class="percent">{{ totalNutrition.cholesterol | dailyValue:'cholesterol' }}</span>
+            </div>
+        
+            <!-- Sodium -->
+            <div class="nutrient">
+                <span><strong>Sodium</strong> {{ totalNutrition.sodium | approximation:1 }} mg</span>
+                <span class="percent">{{ totalNutrition.sodium | dailyValue:'sodium' }}</span> 
+            </div>
+        
+            <!-- Carbohydrates -->
+            <div class="nutrient">
+                <span><strong>Total Carbohydrate</strong> {{ totalNutrition.carbohydrates | approximation:1 }} g</span>
+                <span class="percent">{{ totalNutrition.carbohydrates | dailyValue:'carbohydrates' }}</span> 
+            </div>
+        
+            <div class="sub-nutrient">
+                <span>Dietary Fiber</span> {{ totalNutrition.fiber | approximation:1 }} g
+                <span class="percent">{{ totalNutrition.fiber | dailyValue:'fiber' }}</span> 
+            </div>
+        
+            <div class="sub-nutrient">
+                <span>Total Sugars</span> {{ totalNutrition.sugar | approximation:1 }} g
+                <span class="percent">{{ totalNutrition.sugar | dailyValue:'sugar' }}</span> 
+            </div>
+        
+            <!-- Protein -->
+            <div class="nutrient">
+                <span><strong>Protein</strong> {{ totalNutrition.protein | approximation:1 }} g</span>
+                <span class="percent">{{ totalNutrition.protein | dailyValue:'protein' }}</span> 
+            </div>
+        
+            <!-- Vitamins and minerals -->
+            <div class="nutrient">
+                <span><strong>Vitamin C</strong> {{ totalNutrition.vitaminC | approximation:1 }} mg</span>
+                <span class="percent">{{ totalNutrition.vitaminC | dailyValue:'vitaminC' }}</span> 
+            </div>
+        
+            <div class="nutrient">
+                <span><strong>Calcium</strong> {{ totalNutrition.calcium | approximation:1 }} mg</span>
+                <span class="percent">{{ totalNutrition.calcium | dailyValue:'calcium' }}</span> 
+            </div>
+        
+            <div class="nutrient">
+                <span><strong>Iron</strong> {{ totalNutrition.iron | approximation:1 }} mg</span>
+                <span class="percent">{{ totalNutrition.iron | dailyValue:'iron' }}</span> 
+            </div>
+        
+            <div class="nutrient">
+                <span><strong>Potassium</strong> {{ totalNutrition.potassium | approximation:1 }} mg</span>
+                <span class="percent">{{ totalNutrition.potassium | dailyValue:'potassium' }}</span> 
+            </div>
+        </div>
+        
+    }
+</div>

@@ -1,0 +1,83 @@
+.mt-3{
+    margin-top: 1rem;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #4CAF50;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+@media (max-width: 600px) {
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
+
+/* Container for the entire nutrition facts card */
+.nutrition-facts-card {
+  width:  -webkit-fill-available;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure elements inside the card stack properly */
+.nutrition-facts-card .calories,
+.nutrition-facts-card .nutrient,
+.nutrition-facts-card .sub-nutrient {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+/* Adjust the layout for smaller screens */
+@media (max-width: 600px) {
+  .nutrition-facts-card {
+    max-width: 100%;
+    width: -webkit-fill-available;
+    padding: 15px;
+  }
+
+  /* Ensure font sizes and layout work on smaller screens */
+  .calories-label, .calories-value {
+    font-size: 18px;
+  }
+
+  .nutrition-facts-card .nutrient,
+  .nutrition-facts-card .sub-nutrient {
+    font-size: 14px;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align text to the left */
+  }
+
+  .percent {
+    font-size: 12px;
+    margin-top: 5px; /* Add margin to separate from the nutrient */
+  }
+}
+
+  
+ 
+  

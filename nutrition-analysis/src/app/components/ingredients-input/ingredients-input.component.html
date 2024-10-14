@@ -6,7 +6,8 @@
         placeholder="Enter each ingredient on a new line. Example: 1 cup sugar" aria-label="Ingredients"></textarea>
 
     <!-- Analyze button -->
-    <button mat-raised-button color="primary"  (click)="analyzeIngredients()">
+    <button mat-raised-button color="primary" [disabled]="!isAnalyzeButtonEnabled" (click)="analyzeIngredients()">
         Analyze
     </button>
+
 </div>
