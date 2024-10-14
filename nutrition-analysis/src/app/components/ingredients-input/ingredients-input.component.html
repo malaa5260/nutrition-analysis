@@ -1,0 +1,12 @@
+<div>
+    <h2>Enter Ingredients for Analysis</h2>
+
+    <!-- Textarea for entering ingredients -->
+    <textarea class="form-control" rows="10" [(ngModel)]="ingredients" (input)="onInputChange()"
+        placeholder="Enter each ingredient on a new line. Example: 1 cup sugar" aria-label="Ingredients"></textarea>
+
+    <!-- Analyze button -->
+    <button mat-raised-button color="primary"  (click)="analyzeIngredients()">
+        Analyze
+    </button>
+</div>
