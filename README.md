@@ -41,5 +41,5 @@ Make sure the following are installed on your machine:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/malaa5260/nutrition-analysis
+   git clone https://github.com/malaa5260/nutrition-analysis.git
    cd nutrition-analysis-app
